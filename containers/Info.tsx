@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { textStyles } from "../styles/textStyles";
+import { View, StyleSheet } from "react-native";
 import { fetchDfiPriceFromCoinGecko } from "../api/coingecko";
 import Loading from "../components/Loading";
 import DfiPrice from "./DfiPrice";

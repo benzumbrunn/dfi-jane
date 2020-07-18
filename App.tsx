@@ -4,7 +4,7 @@ import { useFonts, Oswald_400Regular } from "@expo-google-fonts/oswald";
 import { StyleSheet, View } from "react-native";
 import Title from "./components/Title";
 import Loading from "./components/Loading";
-import { pupil } from "./styles/colors";
+import { pupil, sand } from "./styles/colors";
 import Info from "./containers/Info";
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
     <View style={styles.container}>
       <Title />
       <Info />
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor={pupil} style="light" />
     </View>
   );
 }
