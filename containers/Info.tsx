@@ -2,21 +2,22 @@ import React, { PureComponent } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { textStyles } from "../styles/textStyles";
 import { fetchDfiPriceFromCoinGecko } from "../api/coingecko";
-import Loading from "./Loading";
-import PriceRow from "./PriceRow";
+import Loading from "../components/Loading";
+import DfiPrice from "./DfiPrice";
+import DfiStats from "./DfiStats";
 
-export default class DfiPrice extends PureComponent {
+export default class Info extends PureComponent {
   state = {
-    dfiPriceUsd: 0,
-    dfiPriceBtc: 0,
+    dfiPriceUsd: "...",
+    dfiPriceBtc: "...",
     loading: true,
   };
 
   async componentDidMount() {
     const dfiPriceResult = await fetchDfiPriceFromCoinGecko();
     this.setState({
-      dfiPriceUsd: dfiPriceResult.defichain.usd,
-      dfiPriceBtc: dfiPriceResult.defichain.btc,
+      dfiPriceUsd: dfiPriceResult.defichain.usd.toString(),
+      dfiPriceBtc: dfiPriceResult.defichain.btc.toString(),
       loading: false,
     });
   }
@@ -28,9 +29,8 @@ export default class DfiPrice extends PureComponent {
 
     return (
       <View style={styles.container}>
-        <Text style={textStyles.subtitle}>DFI price</Text>
-        <PriceRow currency={"USD"} price={this.state.dfiPriceUsd} />
-        <PriceRow currency={"BTC"} price={this.state.dfiPriceBtc} />
+        <DfiPrice />
+        <DfiStats />
       </View>
     );
   }

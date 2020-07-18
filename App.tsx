@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 import Title from "./components/Title";
 import Loading from "./components/Loading";
 import { pupil } from "./styles/colors";
-import DfiPrice from "./components/DfiPrice";
+import Info from "./containers/Info";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +19,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Title />
-      <DfiPrice />
+      <Info />
       <StatusBar style="auto" />
     </View>
   );
