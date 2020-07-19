@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     backgroundColor: pupil,
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingTop: 24,
+    paddingTop: 48,
   },
 });

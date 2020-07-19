@@ -4,24 +4,45 @@ import DataContainer from "../components/DataContainer";
 import Subtitle from "../components/Subtitle";
 import DataRow from "../components/DataRow";
 
-import { fetchDfiPriceFromCoinGecko } from "../api/coingecko";
 import { fetchDefiChainStats, DefiChainData } from "../api/defichain";
 
-export default class DfiStats extends PureComponent {
-  state: {
-    loading: boolean;
-    dfiStats: DefiChainData | null;
-  } = {
+type Props = {
+  lastUpdated: number;
+};
+
+type State = {
+  dfiStats?: DefiChainData;
+  loading: boolean;
+  lastUpdated: number;
+};
+
+export default class DfiStats extends PureComponent<Props, State> {
+  state: State = {
+    dfiStats: undefined,
     loading: true,
-    dfiStats: null,
+    lastUpdated: 0,
   };
 
-  async componentDidMount() {
+  async reloadData() {
+    this.setState({
+      loading: true,
+    });
     const dfiChainStatsResult = await fetchDefiChainStats();
     this.setState({
       dfiStats: dfiChainStatsResult,
       loading: false,
+      lastUpdated: this.props.lastUpdated,
     });
+  }
+
+  async componentDidMount() {
+    await this.reloadData();
+  }
+
+  async componentDidUpdate() {
+    if (this.props.lastUpdated > this.state.lastUpdated) {
+      await this.reloadData();
+    }
   }
 
   render() {

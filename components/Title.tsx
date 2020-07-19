@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import { textStyles } from "../styles/textStyles";
 
 export default function Title() {
