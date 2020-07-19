@@ -58,7 +58,10 @@ export default class DfiStats extends PureComponent<Props, State> {
       <DataContainer>
         <Subtitle>How many?</Subtitle>
         <DataRow label={"Max"} text={new BigNumber(tokens.max).toFormat()} />
-        <DataRow label={"Total"} text={tokens.supply.total.toString()} />
+        <DataRow
+          label={"Total"}
+          text={new BigNumber(tokens.supply.total).toFormat()}
+        />
         <DataRow
           label={"Circulation"}
           text={new BigNumber(tokens.supply.circulation).toFormat()}
