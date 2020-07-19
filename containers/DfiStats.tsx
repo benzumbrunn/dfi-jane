@@ -1,4 +1,6 @@
 import React, { PureComponent } from "react";
+import BigNumber from "bignumber.js";
+
 import Loading from "../components/Loading";
 import DataContainer from "../components/DataContainer";
 import Subtitle from "../components/Subtitle";
@@ -55,19 +57,19 @@ export default class DfiStats extends PureComponent<Props, State> {
     return (
       <DataContainer>
         <Subtitle>How many?</Subtitle>
-        <DataRow label={"Max"} text={tokens.max.toString()} />
+        <DataRow label={"Max"} text={new BigNumber(tokens.max).toFormat()} />
         <DataRow label={"Total"} text={tokens.supply.total.toString()} />
         <DataRow
           label={"Circulation"}
-          text={tokens.supply.circulation.toString()}
+          text={new BigNumber(tokens.supply.circulation).toFormat()}
         />
         <DataRow
           label={"Foundation"}
-          text={tokens.supply.foundation.toString()}
+          text={new BigNumber(tokens.supply.foundation).toFormat()}
         />
         <DataRow
           label={"Community"}
-          text={tokens.supply.community.toString()}
+          text={new BigNumber(tokens.supply.community).toFormat()}
         />
       </DataContainer>
     );

@@ -6,8 +6,13 @@ import Title from "./components/Title";
 import Loading from "./components/Loading";
 import { pupil } from "./styles/colors";
 import Info from "./containers/Info";
+import BigNumber from "bignumber.js";
+import * as bigNumberFormat from "./bigNumberFormat.json";
+import { Text } from "react-native-animatable";
 
 export default function App() {
+  BigNumber.config({ FORMAT: bigNumberFormat });
+
   const [fontsLoaded] = useFonts({
     Oswald_400Regular,
   });
@@ -19,6 +24,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Title />
+      <Text>{bigNumberFormat.toString()}</Text>
       <Info />
       <StatusBar backgroundColor={pupil} style="light" />
     </View>
