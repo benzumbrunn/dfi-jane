@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   spinner: {
     width: 64,
     height: 64,
-    margin: 24,
+    margin: 36,
   },
 });

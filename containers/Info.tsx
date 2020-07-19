@@ -15,11 +15,12 @@ export default class Info extends PureComponent {
         <DfiPrice lastUpdated={this.state.lastUpdated} />
         <DfiStats lastUpdated={this.state.lastUpdated} />
         <BaseButton
-          title="Refresh"
           onPress={() =>
             this.setState({ lastUpdated: this.state.lastUpdated + 1 })
           }
-        ></BaseButton>
+        >
+          REFRESH
+        </BaseButton>
       </View>
     );
   }

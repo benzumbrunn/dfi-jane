@@ -8,21 +8,28 @@ export const textStyles = StyleSheet.create({
   title: {
     fontFamily: defaultFont,
     color: sand,
-    fontSize: 40,
+    fontSize: 56,
   },
   subtitle: {
     fontFamily: defaultFont,
     color: caramel,
-    fontSize: 20,
+    fontSize: 32,
   },
   highlight: {
     fontFamily: defaultFont,
     color: sand,
-    fontSize: 14,
+    fontSize: 16,
   },
   regular: {
     fontFamily: defaultFont,
     color: toothpaste,
-    fontSize: 14,
+    fontSize: 16,
+  },
+  button: {
+    fontFamily: defaultFont,
+    color: toothpaste,
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
