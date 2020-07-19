@@ -8,7 +8,7 @@ export const textStyles = StyleSheet.create({
   title: {
     fontFamily: defaultFont,
     color: sand,
-    fontSize: 56,
+    fontSize: 40,
   },
   subtitle: {
     fontFamily: defaultFont,

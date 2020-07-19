@@ -11,7 +11,7 @@ export default class Info extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <DfiPrice lastUpdated={this.state.lastUpdated} />
         <DfiStats lastUpdated={this.state.lastUpdated} />
         <BaseButton
@@ -25,11 +25,3 @@ export default class Info extends PureComponent {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    padding: 8,
-  },
-});

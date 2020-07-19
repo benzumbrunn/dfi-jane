@@ -23,10 +23,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Title />
-      <Text>{bigNumberFormat.toString()}</Text>
-      <Info />
-      <StatusBar backgroundColor={pupil} style="light" />
+      <View style={styles.title}>
+        <Title />
+      </View>
+      <View style={styles.info}>
+        <Info />
+        <StatusBar backgroundColor={pupil} style="light" />
+      </View>
     </View>
   );
 }
@@ -35,8 +38,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: pupil,
-    alignItems: "center",
+    paddingTop: 32,
+  },
+  title: {
+    alignItems: "flex-end",
+    marginRight: 32,
+  },
+  info: {
+    alignItems: "flex-start",
     justifyContent: "flex-start",
-    paddingTop: 48,
+    marginLeft: 32,
+    marginRight: 32,
   },
 });
