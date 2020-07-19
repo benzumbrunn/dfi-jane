@@ -5,6 +5,7 @@ import Subtitle from "../components/Subtitle";
 import DataRow from "../components/DataRow";
 
 import { fetchDfiPriceFromCoinGecko } from "../api/coingecko";
+import { View } from "react-native";
 
 export default class DfiPrice extends PureComponent {
   state = {
@@ -29,9 +30,11 @@ export default class DfiPrice extends PureComponent {
 
     return (
       <DataContainer>
-        <Subtitle>How much?</Subtitle>
-        <DataRow label={"USD"} text={this.state.dfiPriceUsd} />
-        <DataRow label={"BTC"} text={this.state.dfiPriceBtc} />
+        <View>
+          <Subtitle>How much?</Subtitle>
+          <DataRow label={"USD"} text={this.state.dfiPriceUsd} />
+          <DataRow label={"BTC"} text={this.state.dfiPriceBtc} />
+        </View>
       </DataContainer>
     );
   }
